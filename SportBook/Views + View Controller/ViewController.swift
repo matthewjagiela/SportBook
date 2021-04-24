@@ -9,8 +9,8 @@ import UIKit
 
 protocol HomeViewControllerDelegate {
     func showLoading()
-    func presentDetails()
-    func presentAPIError(error: APIError)
+    func presentDetails(data: Results)
+    func presentAPIError(message: String)
 }
 
 class ViewController: UIViewController {
@@ -18,24 +18,30 @@ class ViewController: UIViewController {
     let loadingAlert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
     
     let handler = APIRequest()
+    var viewModel = HomeViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        viewModel.controllerDelegate = self
     }
-
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     @IBAction func fetchRecords(_ sender: Any) {
-        //TODO: Call View Model to handle fetching the records
+        viewModel.makeApiRequest()
     }
     
 }
 
 extension ViewController: HomeViewControllerDelegate {
-    func presentAPIError(error: APIError) {
-        
+    func presentAPIError(message: String) {
+        let alert = UIAlertController(title: "Sorry", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     func showLoading() {
@@ -44,13 +50,22 @@ extension ViewController: HomeViewControllerDelegate {
         loadingIndicator.hidesWhenStopped = true
         loadingIndicator.style = UIActivityIndicatorView.Style.medium
         loadingIndicator.startAnimating();
-
+        
         loadingAlert.view.addSubview(loadingIndicator)
-        present(loadingAlert, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.present(self.loadingAlert, animated: true, completion: nil)
+        }
     }
     
-    func presentDetails() {
+    func presentDetails(data: Results) {
         //TODO: present detail controller
+        DispatchQueue.main.async {
+            self.loadingAlert.dismiss(animated: true) { [weak self] in
+                self?.performSegue(withIdentifier: "showResults", sender: self)
+            }
+        
+        }
+        print(data)
     }
     
     
