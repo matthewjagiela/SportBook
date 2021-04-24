@@ -33,10 +33,29 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sports Records" id="ATx-VV-X6v"/>
+                    <connections>
+                        <segue destination="r1K-tF-im4" kind="show" identifier="showResults" id="r2P-vK-Zes"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="963.76811594202911" y="93.75"/>
+        </scene>
+        <!--Record Results-->
+        <scene sceneID="gcw-hN-m8i">
+            <objects>
+                <viewController id="r1K-tF-im4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KtM-PZ-ZkL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="pGm-IV-laT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Record Results" id="H4q-4L-NAE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9CR-Mb-S2Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1611" y="94"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="huM-zl-z4F">
