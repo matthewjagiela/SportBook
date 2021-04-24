@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E98DEB026346445008941C6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98DEAF26346445008941C6 /* Model.swift */; };
+		2E98DEB526346733008941C6 /* APITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98DEB426346733008941C6 /* APITest.swift */; };
 		2EBC165526345B0E00F18D53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC165426345B0E00F18D53 /* AppDelegate.swift */; };
 		2EBC165726345B0E00F18D53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC165626345B0E00F18D53 /* SceneDelegate.swift */; };
 		2EBC165926345B0E00F18D53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC165826345B0E00F18D53 /* ViewController.swift */; };
@@ -15,7 +17,7 @@
 		2EBC166126345B1100F18D53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EBC165F26345B1100F18D53 /* LaunchScreen.storyboard */; };
 		2EBC166C26345B1100F18D53 /* SportBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC166B26345B1100F18D53 /* SportBookTests.swift */; };
 		2EBC167726345B1100F18D53 /* SportBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC167626345B1100F18D53 /* SportBookUITests.swift */; };
-		2EBC168926345BB600F18D53 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2EBC168826345BB600F18D53 /* Alamofire */; };
+		2EBC16A226345DE500F18D53 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC16A126345DE500F18D53 /* APIRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E98DEAF26346445008941C6 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		2E98DEB426346733008941C6 /* APITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITest.swift; sourceTree = "<group>"; };
 		2EBC165126345B0E00F18D53 /* SportBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EBC165426345B0E00F18D53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EBC165626345B0E00F18D53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +54,7 @@
 		2EBC167226345B1100F18D53 /* SportBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EBC167626345B1100F18D53 /* SportBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportBookUITests.swift; sourceTree = "<group>"; };
 		2EBC167826345B1100F18D53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EBC16A126345DE500F18D53 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +62,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EBC168926345BB600F18D53 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +105,7 @@
 		2EBC165326345B0E00F18D53 /* SportBook */ = {
 			isa = PBXGroup;
 			children = (
+				2EBC16A626345DF600F18D53 /* Models */,
 				2EBC169426345C6900F18D53 /* Other */,
 				2EBC168D26345C0800F18D53 /* Views + View Controller */,
 				2EBC165D26345B1100F18D53 /* Assets.xcassets */,
@@ -114,6 +119,7 @@
 			children = (
 				2EBC166B26345B1100F18D53 /* SportBookTests.swift */,
 				2EBC166D26345B1100F18D53 /* Info.plist */,
+				2E98DEB426346733008941C6 /* APITest.swift */,
 			);
 			path = SportBookTests;
 			sourceTree = "<group>";
@@ -146,6 +152,15 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
+		2EBC16A626345DF600F18D53 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2EBC16A126345DE500F18D53 /* APIRequest.swift */,
+				2E98DEAF26346445008941C6 /* Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -163,7 +178,6 @@
 			);
 			name = SportBook;
 			packageProductDependencies = (
-				2EBC168826345BB600F18D53 /* Alamofire */,
 			);
 			productName = SportBook;
 			productReference = 2EBC165126345B0E00F18D53 /* SportBook.app */;
@@ -237,7 +251,6 @@
 			);
 			mainGroup = 2EBC164826345B0E00F18D53;
 			packageReferences = (
-				2EBC168726345BB600F18D53 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 2EBC165226345B0E00F18D53 /* Products */;
 			projectDirPath = "";
@@ -282,8 +295,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E98DEB026346445008941C6 /* Model.swift in Sources */,
 				2EBC165926345B0E00F18D53 /* ViewController.swift in Sources */,
 				2EBC165526345B0E00F18D53 /* AppDelegate.swift in Sources */,
+				2EBC16A226345DE500F18D53 /* APIRequest.swift in Sources */,
 				2EBC165726345B0E00F18D53 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E98DEB526346733008941C6 /* APITest.swift in Sources */,
 				2EBC166C26345B1100F18D53 /* SportBookTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -617,25 +633,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		2EBC168726345BB600F18D53 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.4.3;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		2EBC168826345BB600F18D53 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2EBC168726345BB600F18D53 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2EBC164926345B0E00F18D53 /* Project object */;
 }
