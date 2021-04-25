@@ -19,6 +19,8 @@
 		2EBC167726345B1100F18D53 /* SportBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC167626345B1100F18D53 /* SportBookUITests.swift */; };
 		2EBC16A226345DE500F18D53 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC16A126345DE500F18D53 /* APIRequest.swift */; };
 		2EF2534A26347A9800A05AEE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF2534926347A9800A05AEE /* HomeViewModel.swift */; };
+		2EF253582634E79000A05AEE /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF253572634E79000A05AEE /* ResultsViewController.swift */; };
+		2EF253602634E80400A05AEE /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF2535F2634E80400A05AEE /* ResultsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		2EBC167826345B1100F18D53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EBC16A126345DE500F18D53 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		2EF2534926347A9800A05AEE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		2EF253572634E79000A05AEE /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		2EF2535F2634E80400A05AEE /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,8 @@
 				2EBC165826345B0E00F18D53 /* ViewController.swift */,
 				2EBC165A26345B0E00F18D53 /* Main.storyboard */,
 				2EBC165F26345B1100F18D53 /* LaunchScreen.storyboard */,
+				2EF253572634E79000A05AEE /* ResultsViewController.swift */,
+				2EF2535F2634E80400A05AEE /* ResultsView.swift */,
 			);
 			path = "Views + View Controller";
 			sourceTree = "<group>";
@@ -307,8 +313,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E98DEB026346445008941C6 /* Model.swift in Sources */,
+				2EF253602634E80400A05AEE /* ResultsView.swift in Sources */,
 				2EF2534A26347A9800A05AEE /* HomeViewModel.swift in Sources */,
 				2EBC165926345B0E00F18D53 /* ViewController.swift in Sources */,
+				2EF253582634E79000A05AEE /* ResultsViewController.swift in Sources */,
 				2EBC165526345B0E00F18D53 /* AppDelegate.swift in Sources */,
 				2EBC16A226345DE500F18D53 /* APIRequest.swift in Sources */,
 				2EBC165726345B0E00F18D53 /* SceneDelegate.swift in Sources */,
