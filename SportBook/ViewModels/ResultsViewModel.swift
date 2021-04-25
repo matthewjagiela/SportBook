@@ -18,6 +18,7 @@ struct TableViewData {
     var headline: String
     var date: String
     var type: Category
+    var dateObject: Date
 }
 
 class ResultsViewModel {
@@ -54,24 +55,36 @@ class ResultsViewModel {
         case .Tennis:
             fillTennisData()
         }
+        tableViewData = tableViewData.sorted {
+            $0.dateObject.compare($1.dateObject) == .orderedDescending
+        }
         controllerDelegate?.refreshTableView()
     }
     
     private func fillF1Data() {
         for event in results.f1Results {
-            tableViewData.append(TableViewData(headline: createF1Headline(event: event), date: event.publicationDate, type: .f1))
+            tableViewData.append(TableViewData(headline: createF1Headline(event: event),
+                                               date: event.publicationDate,
+                                               type: .f1,
+                                               dateObject: getDateObject(date: event.publicationDate)))
         }
     }
     
     private func fillTennisData() {
         for event in results.tennis {
-            tableViewData.append(TableViewData(headline: createTennisHeadline(event: event), date: event.publicationDate, type: .Tennis))
+            tableViewData.append(TableViewData(headline: createTennisHeadline(event: event),
+                                               date: event.publicationDate,
+                                               type: .Tennis,
+                                               dateObject: getDateObject(date: event.publicationDate)))
         }
     }
     
     private func fillNBAData() {
         for event in results.nbaResults {
-            tableViewData.append(TableViewData(headline: createNBAHeadline(event: event), date: event.publicationDate, type: .NBA))
+            tableViewData.append(TableViewData(headline: createNBAHeadline(event: event),
+                                               date: event.publicationDate,
+                                               type: .NBA,
+                                               dateObject: getDateObject(date: event.publicationDate)))
         }
     }
     
@@ -94,5 +107,11 @@ class ResultsViewModel {
     
     func getNumberOfEntries() -> Int {
         return tableViewData.count
+    }
+    
+    func getDateObject(date: String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, yyyy h:mm:ss a"
+        return dateFormatter.date(from: date) ?? Date()
     }
 }
