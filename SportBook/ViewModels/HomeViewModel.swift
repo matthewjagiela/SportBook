@@ -11,6 +11,7 @@ import Combine
 class HomeViewModel {
     var controllerDelegate: HomeViewControllerDelegate!
     var subscriptions: Set<AnyCancellable> = []
+    var results: Results?
     
     func makeApiRequest() {
         let api = APIRequest()
@@ -22,7 +23,8 @@ class HomeViewModel {
             }
             
         } receiveValue: { [weak self] results in
-            self?.controllerDelegate.presentDetails(data: results)
+            self?.results = results
+            self?.controllerDelegate.presentDetails()
             
         }.store(in: &subscriptions)
     }
@@ -36,5 +38,12 @@ class HomeViewModel {
             return "An Error has occured. Please try again later."
         }
         
+    }
+    
+    /**
+     USAGE: Can only be called if the results came back so we can use force unwrapping
+     */
+    func getResults() -> Results? {
+        return results
     }
 }

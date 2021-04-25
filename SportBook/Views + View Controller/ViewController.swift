@@ -9,7 +9,7 @@ import UIKit
 
 protocol HomeViewControllerDelegate {
     func showLoading()
-    func presentDetails(data: Results)
+    func presentDetails()
     func presentAPIError(message: String)
 }
 
@@ -31,6 +31,14 @@ class ViewController: UIViewController {
     }
     @IBAction func fetchRecords(_ sender: Any) {
         viewModel.makeApiRequest()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if let controller = segue.destination as? ResultsViewController {
+            guard let results = viewModel.getResults() else { return }
+            controller.viewModel = ResultsViewModel(results: results)
+        }
     }
     
 }
@@ -57,7 +65,7 @@ extension ViewController: HomeViewControllerDelegate {
         }
     }
     
-    func presentDetails(data: Results) {
+    func presentDetails() {
         //TODO: present detail controller
         DispatchQueue.main.async {
             self.loadingAlert.dismiss(animated: true) { [weak self] in
@@ -65,7 +73,6 @@ extension ViewController: HomeViewControllerDelegate {
             }
         
         }
-        print(data)
     }
     
     

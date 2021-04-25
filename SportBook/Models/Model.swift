@@ -11,7 +11,7 @@ import Foundation
 struct Results: Codable {
     let f1Results: [F1Result]
     let nbaResults: [NbaResult]
-    let tennis: [Tennis]
+    let tennis: [TennisResult]
 
     enum CodingKeys: String, CodingKey {
         case f1Results, nbaResults
@@ -34,7 +34,7 @@ struct NbaResult: Codable {
 }
 
 // MARK: - Tennis
-struct Tennis: Codable {
+struct TennisResult: Codable {
     let looser: String
     let numberOfSets: Int
     let publicationDate, tournament, winner: String
