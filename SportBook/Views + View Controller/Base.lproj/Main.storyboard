@@ -44,18 +44,94 @@
         <!--Record Results-->
         <scene sceneID="gcw-hN-m8i">
             <objects>
-                <viewController id="r1K-tF-im4" sceneMemberID="viewController">
+                <viewController id="r1K-tF-im4" customClass="ResultsViewController" customModule="SportBook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KtM-PZ-ZkL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AEH-uv-Ikk">
+                                <rect key="frame" x="0.0" y="140" width="414" height="39"/>
+                                <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="7Bl-77-lNf"/>
+                                </constraints>
+                                <state key="normal" title="Filter Button"/>
+                                <connections>
+                                    <action selector="changeFilter:" destination="r1K-tF-im4" eventType="touchUpInside" id="Jiy-WU-0Sc"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sxh-9A-4Ln">
+                                <rect key="frame" x="0.0" y="187" width="414" height="675"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultCell" rowHeight="108" id="dhg-KA-Xhc" customClass="SportResultTableViewCell" customModule="SportBook" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="108"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dhg-KA-Xhc" id="SIM-3m-rEV">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lewis Hamilton won the Spa BELGIAN Grand Prix" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nP-cf-rG2">
+                                                    <rect key="frame" x="20" y="16" width="374" height="58"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apr 14, 2020 8:09:03 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWi-e3-0PQ">
+                                                    <rect key="frame" x="20" y="79" width="173" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NBA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0b-r1-asL">
+                                                    <rect key="frame" x="363.5" y="79" width="30.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6nP-cf-rG2" firstAttribute="trailing" secondItem="i0b-r1-asL" secondAttribute="trailing" id="3RX-mL-6k1"/>
+                                                <constraint firstItem="6nP-cf-rG2" firstAttribute="top" secondItem="SIM-3m-rEV" secondAttribute="topMargin" constant="5" id="4ZE-uG-UC9"/>
+                                                <constraint firstItem="6nP-cf-rG2" firstAttribute="leading" secondItem="sWi-e3-0PQ" secondAttribute="leading" id="9qk-FE-fCc"/>
+                                                <constraint firstItem="sWi-e3-0PQ" firstAttribute="bottom" secondItem="SIM-3m-rEV" secondAttribute="bottomMargin" id="9xY-k1-e2U"/>
+                                                <constraint firstItem="sWi-e3-0PQ" firstAttribute="top" secondItem="6nP-cf-rG2" secondAttribute="bottom" constant="5" id="Yhb-vj-rSN"/>
+                                                <constraint firstItem="sWi-e3-0PQ" firstAttribute="firstBaseline" secondItem="i0b-r1-asL" secondAttribute="firstBaseline" id="aNr-Dq-2XP"/>
+                                                <constraint firstItem="6nP-cf-rG2" firstAttribute="leading" secondItem="SIM-3m-rEV" secondAttribute="leadingMargin" id="i9T-YT-Bj9"/>
+                                                <constraint firstItem="sWi-e3-0PQ" firstAttribute="baseline" secondItem="i0b-r1-asL" secondAttribute="baseline" id="rJf-DP-jz4"/>
+                                                <constraint firstItem="6nP-cf-rG2" firstAttribute="trailing" secondItem="SIM-3m-rEV" secondAttribute="trailingMargin" id="zM8-x1-Pkc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="date" destination="sWi-e3-0PQ" id="rFX-R6-0ss"/>
+                                            <outlet property="headline" destination="6nP-cf-rG2" id="ue1-76-Ju1"/>
+                                            <outlet property="type" destination="i0b-r1-asL" id="p7a-ei-WNk"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="pGm-IV-laT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sxh-9A-4Ln" firstAttribute="leading" secondItem="pGm-IV-laT" secondAttribute="leading" id="5pk-Rh-nKg"/>
+                            <constraint firstItem="sxh-9A-4Ln" firstAttribute="trailing" secondItem="pGm-IV-laT" secondAttribute="trailing" id="8bQ-9H-SXs"/>
+                            <constraint firstItem="AEH-uv-Ikk" firstAttribute="leading" secondItem="pGm-IV-laT" secondAttribute="leading" id="8p7-vi-aGr"/>
+                            <constraint firstItem="AEH-uv-Ikk" firstAttribute="trailing" secondItem="pGm-IV-laT" secondAttribute="trailing" id="K5H-MU-2Tw"/>
+                            <constraint firstItem="sxh-9A-4Ln" firstAttribute="top" secondItem="AEH-uv-Ikk" secondAttribute="bottom" constant="8" symbolic="YES" id="U4o-GQ-1G2"/>
+                            <constraint firstItem="AEH-uv-Ikk" firstAttribute="top" secondItem="pGm-IV-laT" secondAttribute="top" id="gzE-cg-OBS"/>
+                            <constraint firstItem="sxh-9A-4Ln" firstAttribute="bottom" secondItem="pGm-IV-laT" secondAttribute="bottom" id="hMy-k4-IZE"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Record Results" id="H4q-4L-NAE"/>
+                    <connections>
+                        <outlet property="filterButton" destination="AEH-uv-Ikk" id="DDe-Up-mL5"/>
+                        <outlet property="tableView" destination="sxh-9A-4Ln" id="wlC-1C-rdc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9CR-Mb-S2Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1611" y="94"/>
+            <point key="canvasLocation" x="1610.144927536232" y="93.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="huM-zl-z4F">
@@ -77,6 +153,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="secondarySystemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
